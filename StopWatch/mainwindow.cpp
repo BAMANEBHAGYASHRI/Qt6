@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
     connect(ui->StartBtn, &QPushButton::clicked , this , &MainWindow::start);
-   connect(ui->StopBtn, &QPushButton::clicked , this , &MainWindow::stop);
+    connect(ui->StopBtn, &QPushButton::clicked , this , &MainWindow::stop);
     QObject::connect(ui->ResetBtn, &QPushButton::clicked , this , &MainWindow::reset);
 
 }
