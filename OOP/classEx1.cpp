@@ -23,6 +23,7 @@ int main(){
     s2.name="pooja";
     s2.marks=75;
     
+    // s1.student();
     s1.StudentData();
     s2.StudentData();
     return 0;
