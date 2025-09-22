@@ -124,12 +124,39 @@ class Employee_FinanceDepartment{
 
 };
 
+class Employee_ITDepartment{
+    public:
+    int emp_id;
+    string emp_name;
+    string joiningdate;
+    string designation;
+    
+    public:
+    void IT_department(){
+    cout << "Welcome in IT Department" <<endl;
+    }
+    void Employeedata(int i, string n , string jd, string d){
+        emp_id=i;
+        emp_name=n;
+        joiningdate=jd;
+        designation=d;
+    }
+    void Display_Employee(){
+        cout<<"Employee id::" <<emp_id<<endl;
+        cout<<"Employee Name::"<<emp_name<<endl;
+        cout<<"Employee Joining date::"<<joiningdate<<endl;
+        cout<<"Employee designation::" <<designation<<endl;
+    }
+
+};
+
 
 
 int main(){
     company c;
     c.setcompany("Pixelwise Tehcnology");
     cout<<c.getcompany()<<endl;
+
     
     // hr department employee object
      Employee_HRDepartment empHr;
@@ -167,7 +194,14 @@ int main(){
     empfinance3.Employeedata(112, "sanika" , "6/8/2020","finance");
     
     
+    //  it department employee object
     
+     Employee_ITDepartment empit1;
+     Employee_ITDepartment empit2;
+     Employee_ITDepartment empit3;
+     empit1.Employeedata(113, "Poonam" , "3/8/2020","Information Techology");
+    empit2.Employeedata(114, "pratik" , "7/1/2029","Information Techology");
+    empit3.Employeedata(115, "sanika" , "6/8/2020","Information Techology");
     
     
      
@@ -240,6 +274,14 @@ int main(){
             break;
         case 5: 
             IT.ShowDepartment(); 
+            empit1.IT_department();
+             cout<<"-----------"<<endl;
+              empit1.Display_Employee();
+            cout<<"............"<<endl;
+             empit2.Display_Employee();
+            cout<<"............"<<endl;
+              empit3.Display_Employee();
+            cout<<"............"<<endl;
             break;
         default: 
             cout << "Invalid choice!" << endl;
