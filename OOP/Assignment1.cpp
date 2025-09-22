@@ -72,6 +72,30 @@ class Employee_SalesDepartment{
         cout<<"Employee Joining date::"<<joiningdate<<endl;
         cout<<"Employee designation::" <<designation<<endl;
     }
+};
+class Employee_MarketingDepartment{
+    public:
+    int emp_id;
+    string emp_name;
+    string joiningdate;
+    string designation;
+    
+    public:
+    void Sales_department(){
+    cout << "Welcome in Marketing Department" <<endl;
+    }
+    void Employeedata(int i, string n , string jd, string d){
+        emp_id=i;
+        emp_name=n;
+        joiningdate=jd;
+        designation=d;
+    }
+    void Display_Employee(){
+        cout<<"Employee id::" <<emp_id<<endl;
+        cout<<"Employee Name::"<<emp_name<<endl;
+        cout<<"Employee Joining date::"<<joiningdate<<endl;
+        cout<<"Employee designation::" <<designation<<endl;
+    }
 
 };
 
@@ -97,6 +121,19 @@ int main(){
     empsale1.Employeedata(104, "Poonam" , "3/8/2020","sales");
     empsale2.Employeedata(105, "pratik" , "7/1/2029","sales");
     empsale3.Employeedata(106, "sanika" , "6/8/2020","sales");
+    
+    
+    // Marketing Department Employee object
+    Employee_MarketingDepartment empmarket1;
+    Employee_MarketingDepartment empmarket2;
+    Employee_MarketingDepartment empmarket3;
+      
+    empmarket1.Employeedata(107, "Poonam" , "3/8/2020","sales");
+    empmarket2.Employeedata(108, "pratik" , "7/1/2029","sales");
+    empmarket3.Employeedata(109, "sanika" , "6/8/2020","sales");
+    
+    
+    
     
      
     
@@ -145,6 +182,14 @@ int main(){
             break;
         case 3: 
             Marketing.ShowDepartment(); 
+             empmarket1.Sales_department();
+             cout<<"-----------"<<endl;
+              empmarket1.Display_Employee();
+            cout<<"............"<<endl;
+              empmarket2.Display_Employee();
+            cout<<"............"<<endl;
+              empmarket3.Display_Employee();
+            cout<<"............"<<endl;
             break;
         case 4: 
             Finance.ShowDepartment(); 
