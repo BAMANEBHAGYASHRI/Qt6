@@ -24,11 +24,14 @@ class Departments{
         cout<< "Department name::"<<dep_name<<endl;
     }
 };
+
+
 class Employee{
     int emp_id;
     string emp_name;
     string joiningdate;
     string designation;
+    
     public:
     void Employee_Data(int i, string n , string jd, string d){
         emp_id=i;
@@ -45,7 +48,7 @@ class Employee{
 };
 class Employee_HRDepartment:public Employee{
     public:
-    // Employee_HRDepartment(int new_id, string new_name , string new_jd, string new_d):Employee(new_id,new_name , new_jd, new_d){
+    // Employee_HRDepartment(int new_id, string new_name , string new_jd, string new_d):Employee_Data(new_id,new_name , new_jd, new_d){
     //      cout<<"Add successfully Memebers" <<endl;
         
     // };
