@@ -24,7 +24,6 @@ class company{
         }
     };
 };
-
 class Employee{
     int emp_id;
     string emp_name;
@@ -58,80 +57,23 @@ class Employee_SalesDepartment:public Employee{
     }
 };
 class Employee_MarketingDepartment:public Employee{
-    // public:
-    // int emp_id;
-    // string emp_name;
-    // string joiningdate;
-    // string designation;
-    
-    public:
+   public:
     void Marketing_department(){
     cout << "Welcome in Marketing Department" <<endl;
     }
-    // void Employeedata(int i, string n , string jd, string d){
-    //     emp_id=i;
-    //     emp_name=n;
-    //     joiningdate=jd;
-    //     designation=d;
-    // }
-    // void Display_Employee(){
-    //     cout<<"Employee id::" <<emp_id<<endl;
-    //     cout<<"Employee Name::"<<emp_name<<endl;
-    //     cout<<"Employee Joining date::"<<joiningdate<<endl;
-    //     cout<<"Employee designation::" <<designation<<endl;
-    // }
-
 };
-class Employee_FinanceDepartment{
-    public:
-    int emp_id;
-    string emp_name;
-    string joiningdate;
-    string designation;
-    
+class Employee_FinanceDepartment:public Employee{
     public:
     void Finance_department(){
     cout << "Welcome in Finance Department" <<endl;
     }
-    void Employeedata(int i, string n , string jd, string d){
-        emp_id=i;
-        emp_name=n;
-        joiningdate=jd;
-        designation=d;
-    }
-    void Display_Employee(){
-        cout<<"Employee id::" <<emp_id<<endl;
-        cout<<"Employee Name::"<<emp_name<<endl;
-        cout<<"Employee Joining date::"<<joiningdate<<endl;
-        cout<<"Employee designation::" <<designation<<endl;
-    }
-
 };
 
-class Employee_ITDepartment{
-    public:
-    int emp_id;
-    string emp_name;
-    string joiningdate;
-    string designation;
-    
+class Employee_ITDepartment:public Employee{
     public:
     void IT_department(){
     cout << "Welcome in IT Department" <<endl;
     }
-    void Employeedata(int i, string n , string jd, string d){
-        emp_id=i;
-        emp_name=n;
-        joiningdate=jd;
-        designation=d;
-    }
-    void Display_Employee(){
-        cout<<"Employee id::" <<emp_id<<endl;
-        cout<<"Employee Name::"<<emp_name<<endl;
-        cout<<"Employee Joining date::"<<joiningdate<<endl;
-        cout<<"Employee designation::" <<designation<<endl;
-    }
-
 };
 
 int main(){
@@ -164,65 +106,29 @@ int main(){
     obj7. Employee_Data(108, "poonam" , "3/8/2020","marketing");
     obj8. Employee_Data(109, "saksham" , "4/8/2020","marketing");
     
+    // finace department object
+    Employee_FinanceDepartment obj9;
+    Employee_FinanceDepartment obj10;
+    Employee_FinanceDepartment obj11;
+    obj9. Employee_Data(110, "sakshi" , "3/8/2020","Finance");
+    obj10. Employee_Data(111, "poonam" , "3/8/2020","Finance");
+    obj11. Employee_Data(112, "saksham" , "4/8/2020","Finance");
     
+    // IT Department Object
+    Employee_ITDepartment obj12;
+    Employee_ITDepartment obj13;
+    Employee_ITDepartment obj14;
+    obj12.Employee_Data(113, "sakshi" , "3/8/2020","It");
+    obj13.Employee_Data(114, "poonam" , "3/8/2020","IT");
+    obj14.Employee_Data(115, "saksham" , "3/8/2020","IT");
     
-    
-    
-    
-    
-
-   
-     
-    // sales department employee object
-    // Employee_SalesDepartment empsale1;
-    // Employee_SalesDepartment empsale2;
-    // Employee_SalesDepartment empsale3;
-    // empsale1.Employeedata(104, "Poonam" , "3/8/2020","sales");
-    // empsale2.Employeedata(105, "pratik" , "7/1/2029","sales");
-    // empsale3.Employeedata(106, "sanika" , "6/8/2020","sales");
-    
-    
-    // Marketing Department Employee object
-    
-    // Employee_MarketingDepartment empmarket1;
-    // Employee_MarketingDepartment empmarket2;
-    // Employee_MarketingDepartment empmarket3;
-    // empmarket1.Employeedata(107, "Poonam" , "3/8/2020","Marketing");
-    // empmarket2.Employeedata(108, "pratik" , "7/1/2029","Marketing");
-    // empmarket3.Employeedata(109, "sanika" , "6/8/2020","Marketing");
-    
-    
-    // finance department employee object
-    Employee_FinanceDepartment empfinance1;
-    Employee_FinanceDepartment empfinance2;
-    Employee_FinanceDepartment empfinance3;
-    empfinance1.Employeedata(110, "Poonam" , "3/8/2020","finance");
-    empfinance2.Employeedata(111, "pratik" , "7/1/2029","finance");
-    empfinance3.Employeedata(112, "sanika" , "6/8/2020","finance");
-    
-    
-    //  it department employee object
-    
-     Employee_ITDepartment empit1;
-     Employee_ITDepartment empit2;
-     Employee_ITDepartment empit3;
-     empit1.Employeedata(113, "Poonam" , "3/8/2020","Information Techology");
-    empit2.Employeedata(114, "pratik" , "7/1/2029","Information Techology");
-    empit3.Employeedata(115, "sanika" , "6/8/2020","Information Techology");
-    
-    // All employee List
-    // EmployeeList el;
-    // el.Display_Employee();
-     
-    
-    
-   
+ 
     // object od departments
-    company::Departments hr( 1 , "hr");
-    company::Departments sales( 1 , "sales");
-    company::Departments Marketing( 1 , "Marketing");
-    company::Departments Finance( 1 , "Finance");
-    company::Departments IT( 1 , "It");
+    company::Departments Employee_HRDepartment( 1 , "hr");
+    company::Departments Employee_SalesDepartment( 2 , "sales");
+    company::Departments Employee_MarketingDepartment( 3 , "Marketing");
+    company::Departments Employee_FinanceDepartment( 4 , "Finance");
+    company::Departments Employee_ITDepartment( 5 , "It");
     
     
     int choice;
@@ -238,7 +144,7 @@ int main(){
 
     switch (choice) {
         case 1: 
-            hr.ShowDepartment();
+            Employee_HRDepartment.ShowDepartment();
             cout<<"*********"<<endl;
             obj.Human_Resource_department();
             cout<<"-----------"<<endl;
@@ -250,7 +156,7 @@ int main(){
             cout<<"............"<<endl;
             break;
         case 2: 
-            sales.ShowDepartment(); 
+            Employee_SalesDepartment.ShowDepartment(); 
             obj3.Sales_department();
              cout<<"-----------"<<endl;
              obj3.Display_Employee();
@@ -261,7 +167,7 @@ int main(){
             cout<<"............"<<endl;
             break;
         case 3: 
-            Marketing.ShowDepartment(); 
+           Employee_MarketingDepartment.ShowDepartment(); 
              obj6.Marketing_department();
              cout<<"-----------"<<endl;
               obj6.Display_Employee();
@@ -272,26 +178,26 @@ int main(){
             cout<<"............"<<endl;
             break;
         case 4: 
-            Finance.ShowDepartment(); 
-             empfinance1.Finance_department();
+            Employee_FinanceDepartment.ShowDepartment(); 
+             obj9.Finance_department();
              cout<<"-----------"<<endl;
-              empfinance1.Display_Employee();
+              obj9.Display_Employee();
             cout<<"............"<<endl;
-             empfinance2.Display_Employee();
+             obj10.Display_Employee();
             cout<<"............"<<endl;
-              empfinance3.Display_Employee();
+              obj11.Display_Employee();
             cout<<"............"<<endl;
             
             break;
         case 5: 
-            IT.ShowDepartment(); 
-            empit1.IT_department();
+            Employee_ITDepartment.ShowDepartment(); 
+            obj12.IT_department();
              cout<<"-----------"<<endl;
-              empit1.Display_Employee();
+              obj12.Display_Employee();
             cout<<"............"<<endl;
-             empit2.Display_Employee();
+             obj13.Display_Employee();
             cout<<"............"<<endl;
-              empit3.Display_Employee();
+              obj14.Display_Employee();
             cout<<"............"<<endl;
             break;
         default: 
