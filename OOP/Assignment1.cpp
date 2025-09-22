@@ -48,10 +48,10 @@ class Employee{
 };
 class Employee_HRDepartment:public Employee{
     public:
-    // Employee_HRDepartment(int new_id, string new_name , string new_jd, string new_d):Employee_Data(new_id,new_name , new_jd, new_d){
-    //      cout<<"Add successfully Memebers" <<endl;
-        
-    // };
+    Employee_HRDepartment(int new_id, string new_name , string new_jd, string new_d){
+        Employee::Employee_Data(new_id,new_name ,new_jd, new_d);
+         cout<<"Add successfully Memebers" <<endl;
+    };
     void Human_Resource_department(){
     cout << "Welcome in HR Department" <<endl;
     }
@@ -200,6 +200,7 @@ int main(){
             cout<<"............"<<endl;
               obj11.Display_Employee();
             cout<<"............"<<endl;
+            
             break;
         case 5: 
             Employee_ITDepartment.ShowDepartment(); 
