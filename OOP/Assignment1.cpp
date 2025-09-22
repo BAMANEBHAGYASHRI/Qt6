@@ -9,20 +9,20 @@ class company{
     string getcompany(){
         return company_name;
     }
-    class Departments{
-        public:
-            int dep_id;
-            string dep_name;
-        
-        Departments(int i , string n){
-            dep_id=i;
-            dep_name=n;
-        }
-        void ShowDepartment(){
-            cout << "Department id::"<<dep_id<<endl;
-            cout<< "Department name::"<<dep_name<<endl;
-        }
-    };
+};
+class Departments{
+    public:
+        int dep_id;
+        string dep_name;
+    
+    Departments(int i , string n){
+        dep_id=i;
+        dep_name=n;
+    }
+    void ShowDepartment(){
+        cout << "Department id::"<<dep_id<<endl;
+        cout<< "Department name::"<<dep_name<<endl;
+    }
 };
 class Employee{
     int emp_id;
@@ -45,6 +45,10 @@ class Employee{
 };
 class Employee_HRDepartment:public Employee{
     public:
+    // Employee_HRDepartment(int new_id, string new_name , string new_jd, string new_d):Employee(new_id,new_name , new_jd, new_d){
+    //      cout<<"Add successfully Memebers" <<endl;
+        
+    // };
     void Human_Resource_department(){
     cout << "Welcome in HR Department" <<endl;
     }
@@ -86,9 +90,15 @@ int main(){
     Employee_HRDepartment obj;
     Employee_HRDepartment obj1;
     Employee_HRDepartment obj2;
-    obj. Employee_Data(101, "sakshi" , "3/8/2020","HUman Resource");
+    obj. Employee_Data(101, "sakshi" , "3/8/2020","HR");
     obj1. Employee_Data(102, "poonam" , "3/8/2020","HR");
-    obj2. Employee_Data(103, "saksham" , "4/8/2020","HUman Resource");
+    obj2.Employee_Data(103, "saksham" , "4/8/2020","HR");
+    
+    cout<<endl;
+    // add another employee
+    //  Employee_HRDepartment emp1(201, "Prashant", "8/2/2010", "HR");
+    // emp1.Display_Employee();
+     
     
     // sale Department object
     Employee_SalesDepartment obj3;
@@ -124,11 +134,11 @@ int main(){
     
  
     // object od departments
-    company::Departments Employee_HRDepartment( 1 , "hr");
-    company::Departments Employee_SalesDepartment( 2 , "sales");
-    company::Departments Employee_MarketingDepartment( 3 , "Marketing");
-    company::Departments Employee_FinanceDepartment( 4 , "Finance");
-    company::Departments Employee_ITDepartment( 5 , "It");
+    Departments Employee_HRDepartment( 1 , "hr");
+    Departments Employee_SalesDepartment( 2 , "sales");
+    Departments Employee_MarketingDepartment( 3 , "Marketing");
+    Departments Employee_FinanceDepartment( 4 , "Finance");
+    Departments Employee_ITDepartment( 5 , "It");
     
     
     int choice;
