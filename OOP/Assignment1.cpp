@@ -24,78 +24,62 @@ class company{
         }
     };
 };
-class Employee_HRDepartment{
-    public:
+
+class Employee{
     int emp_id;
     string emp_name;
     string joiningdate;
     string designation;
-    
+    public:
+    void Employee_Data(int i, string n , string jd, string d){
+        emp_id=i;
+        emp_name=n;
+        joiningdate=jd;
+        designation=d;
+    }
+    void Display_Employee(){
+        cout<<"Employee id::" <<emp_id<<endl;
+        cout<<"Employee Name::"<<emp_name<<endl;
+        cout<<"Employee Joining date::"<<joiningdate<<endl;
+        cout<<"Employee designation::" <<designation<<endl;
+    }
+};
+class Employee_HRDepartment:public Employee{
     public:
     void Human_Resource_department(){
     cout << "Welcome in HR Department" <<endl;
     }
-    void Employeedata(int i, string n , string jd, string d){
-        emp_id=i;
-        emp_name=n;
-        joiningdate=jd;
-        designation=d;
-    }
-    void Display_Employee(){
-        cout<<"Employee id::" <<emp_id<<endl;
-        cout<<"Employee Name::"<<emp_name<<endl;
-        cout<<"Employee Joining date::"<<joiningdate<<endl;
-        cout<<"Employee designation::" <<designation<<endl;
-    }
-
 };
-class Employee_SalesDepartment{
-    public:
-    int emp_id;
-    string emp_name;
-    string joiningdate;
-    string designation;
-    
+
+class Employee_SalesDepartment:public Employee{
     public:
     void Sales_department(){
     cout << "Welcome in Sales Department" <<endl;
     }
-    void Employeedata(int i, string n , string jd, string d){
-        emp_id=i;
-        emp_name=n;
-        joiningdate=jd;
-        designation=d;
-    }
-    void Display_Employee(){
-        cout<<"Employee id::" <<emp_id<<endl;
-        cout<<"Employee Name::"<<emp_name<<endl;
-        cout<<"Employee Joining date::"<<joiningdate<<endl;
-        cout<<"Employee designation::" <<designation<<endl;
-    }
 };
-class Employee_MarketingDepartment{
-    public:
-    int emp_id;
-    string emp_name;
-    string joiningdate;
-    string designation;
+class Employee_MarketingDepartment:public Employee{
+    // public:
+    // int emp_id;
+    // string emp_name;
+    // string joiningdate;
+    // string designation;
     
     public:
-    void Sales_department(){
+    void Marketing_department(){
     cout << "Welcome in Marketing Department" <<endl;
     }
-    void Employeedata(int i, string n , string jd, string d){
-        emp_id=i;
-        emp_name=n;
-        joiningdate=jd;
-        designation=d;
-    }
-    void Display_Employee(){
-        cout<<"Employee id::" <<emp_id<<endl;
-        cout<<"Employee Name::"<<emp_name<<endl;
-        cout<<"Employee Joining date::"<<joiningdate<<endl;
-        cout<<"Employee designation::" <<designation<<endl;
-    }
+    // void Employeedata(int i, string n , string jd, string d){
+    //     emp_id=i;
+    //     emp_name=n;
+    //     joiningdate=jd;
+    //     designation=d;
+    // }
+    // void Display_Employee(){
+    //     cout<<"Employee id::" <<emp_id<<endl;
+    //     cout<<"Employee Name::"<<emp_name<<endl;
+    //     cout<<"Employee Joining date::"<<joiningdate<<endl;
+    //     cout<<"Employee designation::" <<designation<<endl;
+    // }
 
 };
 class Employee_FinanceDepartment{
@@ -150,39 +134,62 @@ class Employee_ITDepartment{
 
 };
 
-
-
 int main(){
+    // main class object
     company c;
     c.setcompany("Pixelwise Tehcnology");
     cout<<c.getcompany()<<endl;
-
     
-    // hr department employee object
-     Employee_HRDepartment empHr;
-     Employee_HRDepartment empHr1;
-     Employee_HRDepartment empHr2;
-     empHr.Employeedata(101, "Poonam" , "3/8/2020","Hr");
-     empHr1.Employeedata(102, "pratik" , "7/1/2029","Hr");
-     empHr2.Employeedata(103, "sanika" , "6/8/2020","Hr");
+    // Hr Department Object
+    Employee_HRDepartment obj;
+    Employee_HRDepartment obj1;
+    Employee_HRDepartment obj2;
+    obj. Employee_Data(101, "sakshi" , "3/8/2020","HUman Resource");
+    obj1. Employee_Data(102, "poonam" , "3/8/2020","HR");
+    obj2. Employee_Data(103, "saksham" , "4/8/2020","HUman Resource");
+    
+    // sale Department object
+    Employee_SalesDepartment obj3;
+    Employee_SalesDepartment obj4;
+    Employee_SalesDepartment obj5;
+    obj3. Employee_Data(104, "sakshi" , "3/8/2020","sales");
+    obj4. Employee_Data(105, "poonam" , "3/8/2020","sales");
+    obj5. Employee_Data(106, "saksham" , "4/8/2020","sales");
+    
+    // Marketing Departmenty object
+    Employee_MarketingDepartment obj6;
+    Employee_MarketingDepartment obj7;
+    Employee_MarketingDepartment obj8;
+    obj6. Employee_Data(107, "sakshi" , "3/8/2020","marketing");
+    obj7. Employee_Data(108, "poonam" , "3/8/2020","marketing");
+    obj8. Employee_Data(109, "saksham" , "4/8/2020","marketing");
+    
+    
+    
+    
+    
+    
+    
+
+   
      
     // sales department employee object
-    Employee_SalesDepartment empsale1;
-    Employee_SalesDepartment empsale2;
-    Employee_SalesDepartment empsale3;
-    empsale1.Employeedata(104, "Poonam" , "3/8/2020","sales");
-    empsale2.Employeedata(105, "pratik" , "7/1/2029","sales");
-    empsale3.Employeedata(106, "sanika" , "6/8/2020","sales");
+    // Employee_SalesDepartment empsale1;
+    // Employee_SalesDepartment empsale2;
+    // Employee_SalesDepartment empsale3;
+    // empsale1.Employeedata(104, "Poonam" , "3/8/2020","sales");
+    // empsale2.Employeedata(105, "pratik" , "7/1/2029","sales");
+    // empsale3.Employeedata(106, "sanika" , "6/8/2020","sales");
     
     
     // Marketing Department Employee object
     
-    Employee_MarketingDepartment empmarket1;
-    Employee_MarketingDepartment empmarket2;
-    Employee_MarketingDepartment empmarket3;
-    empmarket1.Employeedata(107, "Poonam" , "3/8/2020","Marketing");
-    empmarket2.Employeedata(108, "pratik" , "7/1/2029","Marketing");
-    empmarket3.Employeedata(109, "sanika" , "6/8/2020","Marketing");
+    // Employee_MarketingDepartment empmarket1;
+    // Employee_MarketingDepartment empmarket2;
+    // Employee_MarketingDepartment empmarket3;
+    // empmarket1.Employeedata(107, "Poonam" , "3/8/2020","Marketing");
+    // empmarket2.Employeedata(108, "pratik" , "7/1/2029","Marketing");
+    // empmarket3.Employeedata(109, "sanika" , "6/8/2020","Marketing");
     
     
     // finance department employee object
@@ -203,7 +210,9 @@ int main(){
     empit2.Employeedata(114, "pratik" , "7/1/2029","Information Techology");
     empit3.Employeedata(115, "sanika" , "6/8/2020","Information Techology");
     
-    
+    // All employee List
+    // EmployeeList el;
+    // el.Display_Employee();
      
     
     
@@ -214,7 +223,8 @@ int main(){
     company::Departments Marketing( 1 , "Marketing");
     company::Departments Finance( 1 , "Finance");
     company::Departments IT( 1 , "It");
- 
+    
+    
     int choice;
     cout << "Select a Department:" << endl;
     cout << "1. Human Resources" << endl;
@@ -224,40 +234,41 @@ int main(){
     cout << "5. IT" << endl;
     cout << "Enter your choice: ";
     cin >>choice;
+    
 
     switch (choice) {
         case 1: 
             hr.ShowDepartment();
             cout<<"*********"<<endl;
-            empHr.Human_Resource_department();
+            obj.Human_Resource_department();
             cout<<"-----------"<<endl;
-            empHr.Display_Employee();
+            obj1.Display_Employee();
             cout<<"............"<<endl;
-            empHr1.Display_Employee();
+            obj1.Display_Employee();
             cout<<"............"<<endl;
-            empHr2.Display_Employee();
+            obj2.Display_Employee();
             cout<<"............"<<endl;
             break;
         case 2: 
             sales.ShowDepartment(); 
-            empsale1.Sales_department();
+            obj3.Sales_department();
              cout<<"-----------"<<endl;
-             empsale1.Display_Employee();
+             obj3.Display_Employee();
             cout<<"............"<<endl;
-             empsale2.Display_Employee();
+             obj4.Display_Employee();
             cout<<"............"<<endl;
-             empsale3.Display_Employee();
+             obj5.Display_Employee();
             cout<<"............"<<endl;
             break;
         case 3: 
             Marketing.ShowDepartment(); 
-             empmarket1.Sales_department();
+             obj6.Marketing_department();
              cout<<"-----------"<<endl;
-              empmarket1.Display_Employee();
+              obj6.Display_Employee();
             cout<<"............"<<endl;
-              empmarket2.Display_Employee();
+              obj7.Display_Employee();
             cout<<"............"<<endl;
-              empmarket3.Display_Employee();
+              obj8.Display_Employee();
             cout<<"............"<<endl;
             break;
         case 4: 
