@@ -24,34 +24,57 @@ class company{
         }
     };
 };
-class AllDepartment{
+class Employee_HRDepartment{
     public:
-    class Employee_HRDepartment{
-        public:
-        int emp_id;
-        string emp_name;
-        string joiningdate;
-        string designation;
-        
-        public:
-        void Human_Resource_department(){
-        cout << "Welcome in HR Department" <<endl;
-    }
-        void Employeedata(int i, string n , string jd, string d){
-            emp_id=i;
-            emp_name=n;
-            joiningdate=jd;
-            designation=d;
-        }
-        void Display_Employee(){
-            cout<<"Employee id::" <<emp_id<<endl;
-            cout<<"Employee Name::"<<emp_name<<endl;
-            cout<<"Employee Joining date::"<<joiningdate<<endl;
-            cout<<"Employee designation::" <<designation<<endl;
-        }
+    int emp_id;
+    string emp_name;
+    string joiningdate;
+    string designation;
     
-    };
+    public:
+    void Human_Resource_department(){
+    cout << "Welcome in HR Department" <<endl;
+    }
+    void Employeedata(int i, string n , string jd, string d){
+        emp_id=i;
+        emp_name=n;
+        joiningdate=jd;
+        designation=d;
+    }
+    void Display_Employee(){
+        cout<<"Employee id::" <<emp_id<<endl;
+        cout<<"Employee Name::"<<emp_name<<endl;
+        cout<<"Employee Joining date::"<<joiningdate<<endl;
+        cout<<"Employee designation::" <<designation<<endl;
+    }
+
 };
+class Employee_SalesDepartment{
+    public:
+    int emp_id;
+    string emp_name;
+    string joiningdate;
+    string designation;
+    
+    public:
+    void Sales_department(){
+    cout << "Welcome in Sales Department" <<endl;
+    }
+    void Employeedata(int i, string n , string jd, string d){
+        emp_id=i;
+        emp_name=n;
+        joiningdate=jd;
+        designation=d;
+    }
+    void Display_Employee(){
+        cout<<"Employee id::" <<emp_id<<endl;
+        cout<<"Employee Name::"<<emp_name<<endl;
+        cout<<"Employee Joining date::"<<joiningdate<<endl;
+        cout<<"Employee designation::" <<designation<<endl;
+    }
+
+};
+
 
 
 int main(){
@@ -59,23 +82,27 @@ int main(){
     c.setcompany("Pixelwise Tehcnology");
     cout<<c.getcompany()<<endl;
     
-    // object of alldepartments
-    // AllDepartment ad;
-    
-    
     // hr department employee object
-     AllDepartment::Employee_HRDepartment empHr;
-     AllDepartment::Employee_HRDepartment empHr1;
-     AllDepartment::Employee_HRDepartment empHr2;
+     Employee_HRDepartment empHr;
+     Employee_HRDepartment empHr1;
+     Employee_HRDepartment empHr2;
      empHr.Employeedata(101, "Poonam" , "3/8/2020","Hr");
      empHr1.Employeedata(102, "pratik" , "7/1/2029","Hr");
      empHr2.Employeedata(103, "sanika" , "6/8/2020","Hr");
      
+    // sales department employee object
+    Employee_SalesDepartment empsale1;
+    Employee_SalesDepartment empsale2;
+    Employee_SalesDepartment empsale3;
+    empsale1.Employeedata(104, "Poonam" , "3/8/2020","sales");
+    empsale2.Employeedata(105, "pratik" , "7/1/2029","sales");
+    empsale3.Employeedata(106, "sanika" , "6/8/2020","sales");
+    
      
     
     
    
-
+    // object od departments
     company::Departments hr( 1 , "hr");
     company::Departments sales( 1 , "sales");
     company::Departments Marketing( 1 , "Marketing");
@@ -107,6 +134,14 @@ int main(){
             break;
         case 2: 
             sales.ShowDepartment(); 
+            empsale1.Sales_department();
+             cout<<"-----------"<<endl;
+             empsale1.Display_Employee();
+            cout<<"............"<<endl;
+             empsale2.Display_Employee();
+            cout<<"............"<<endl;
+             empsale3.Display_Employee();
+            cout<<"............"<<endl;
             break;
         case 3: 
             Marketing.ShowDepartment(); 
