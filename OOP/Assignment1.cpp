@@ -98,6 +98,31 @@ class Employee_MarketingDepartment{
     }
 
 };
+class Employee_FinanceDepartment{
+    public:
+    int emp_id;
+    string emp_name;
+    string joiningdate;
+    string designation;
+    
+    public:
+    void Finance_department(){
+    cout << "Welcome in Finance Department" <<endl;
+    }
+    void Employeedata(int i, string n , string jd, string d){
+        emp_id=i;
+        emp_name=n;
+        joiningdate=jd;
+        designation=d;
+    }
+    void Display_Employee(){
+        cout<<"Employee id::" <<emp_id<<endl;
+        cout<<"Employee Name::"<<emp_name<<endl;
+        cout<<"Employee Joining date::"<<joiningdate<<endl;
+        cout<<"Employee designation::" <<designation<<endl;
+    }
+
+};
 
 
 
@@ -124,13 +149,23 @@ int main(){
     
     
     // Marketing Department Employee object
+    
     Employee_MarketingDepartment empmarket1;
     Employee_MarketingDepartment empmarket2;
     Employee_MarketingDepartment empmarket3;
-      
-    empmarket1.Employeedata(107, "Poonam" , "3/8/2020","sales");
-    empmarket2.Employeedata(108, "pratik" , "7/1/2029","sales");
-    empmarket3.Employeedata(109, "sanika" , "6/8/2020","sales");
+    empmarket1.Employeedata(107, "Poonam" , "3/8/2020","Marketing");
+    empmarket2.Employeedata(108, "pratik" , "7/1/2029","Marketing");
+    empmarket3.Employeedata(109, "sanika" , "6/8/2020","Marketing");
+    
+    
+    // finance department employee object
+    Employee_FinanceDepartment empfinance1;
+    Employee_FinanceDepartment empfinance2;
+    Employee_FinanceDepartment empfinance3;
+    empfinance1.Employeedata(110, "Poonam" , "3/8/2020","finance");
+    empfinance2.Employeedata(111, "pratik" , "7/1/2029","finance");
+    empfinance3.Employeedata(112, "sanika" , "6/8/2020","finance");
+    
     
     
     
@@ -193,6 +228,15 @@ int main(){
             break;
         case 4: 
             Finance.ShowDepartment(); 
+             empfinance1.Finance_department();
+             cout<<"-----------"<<endl;
+              empfinance1.Display_Employee();
+            cout<<"............"<<endl;
+             empfinance2.Display_Employee();
+            cout<<"............"<<endl;
+              empfinance3.Display_Employee();
+            cout<<"............"<<endl;
+            
             break;
         case 5: 
             IT.ShowDepartment(); 
