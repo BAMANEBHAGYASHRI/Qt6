@@ -36,6 +36,7 @@ class Sport:virtual  public Student{
 class  Result:public Test, public Sport{
     public:
     void displayResult(){
+        
         int total=m1+m2+score;
         displayRoll();
         DisplayMark();

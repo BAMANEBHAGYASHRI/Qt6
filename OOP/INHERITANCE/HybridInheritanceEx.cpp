@@ -15,7 +15,7 @@ class Employee{
      }
 };
 class  Department:virtual public Employee{
-    public:
+    public:  
     string deptName;
     void setDeptName(string n){
         deptName=n;
