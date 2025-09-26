@@ -17,6 +17,7 @@ public:
         designation = d;
     }
     
+    
     void Display_Employee() {
         cout << "Company Name:: " << company_name << endl;
         cout << "Employee ID:: " << emp_id << endl;
@@ -28,62 +29,94 @@ public:
 
 class ItDepartment : virtual public Employee {
 public:
-Employee itdep;
+    Employee emp1;
+    Employee emp2;
     void ShowItDepartment() {
-        
         cout << "\nWelcome in Information Technology Department" << endl;
-        itdep.Display_Employee();
+        emp1.Display_Employee();
+        emp2.Display_Employee();
     }
 };
 
 class SaleDepartment : virtual public Employee {
 public:
-  Employee saledep;
+ Employee emp1;
+    Employee emp2;
     void ShowSaleDepartment() {
-      
         cout << "\nWelcome in Sales Department" << endl;
-        saledep.Display_Employee();
+        emp1.Display_Employee();
+        emp2.Display_Employee();
     }
 };
 
 class MarketingDepartment : virtual public Employee {
 public:
-  Employee madep;
+   Employee emp1;
+    Employee emp2;
     void ShowMarketingDepartment() {
       
         cout << "\nWelcome in Marketing Department" << endl;
-        madep.Display_Employee();
+        emp1.Display_Employee();
+        emp2.Display_Employee();
     }
 };
-
-class Company{     
-    public:
+class Company {     
+public:
     ItDepartment it;
     SaleDepartment sale;
     MarketingDepartment m;
-    
-    void ShowAllDepartment(){
-        it.ShowItDepartment();
-        sale.ShowSaleDepartment();
-        m.ShowMarketingDepartment();
+
+    Company() {} // default constructor
+
+    void ShowItEmployee() { it.ShowItDepartment(); }
+    void ShowSaleEmployee() { sale.ShowSaleDepartment(); }
+    void ShowMarketingEmployee() { m.ShowMarketingDepartment(); }
+
+    void showDepartments() {
+        cout << "\nDepartments in Company:\n";
+        cout << "1. IT Department\n";
+        cout << "2. Sales Department\n";
+        cout << "3. Marketing Department\n";
+        cout << "Enter your choice: ";
+    }
+
+    void showEmployeesByChoice(int choice) {
+        switch (choice) {
+            case 1: 
+            ShowItEmployee();
+            break;
+            case 2: ShowSaleEmployee(); break;
+            case 3: ShowMarketingEmployee(); break;
+            default: cout << "Invalid choice!\n"; break;
+        }
     }
 };
 
 int main() {
+
     Company c;
-    Company c1;
+
+    c.it.emp1.Employee_Data("PixelWise Technology", 101, "Bhagyashri", "12/8/2023", "Developer");
+    c.it.emp2.Employee_Data("PixelWise Technology", 102, "Vishal", "12/8/2023", "Designer");
+    
+    
+    c.sale.emp1.Employee_Data("PixelWise Technology", 201, "Bhagyashri", "12/8/2023", "sale exective");
+    c.sale.emp2.Employee_Data("PixelWise Technology", 202, "Vishal", "12/8/2023", "sale");
+
+    c.m.emp1.Employee_Data("PixelWise Technology", 301, "Bhagyashri", "12/8/2023", "marketing");
+    c.m.emp2.Employee_Data("PixelWise Technology", 302, "Vishal", "12/8/2023", "marketing");
 
     
-    c.it.itdep.Employee_Data("PixelWise Technology", 101, "Bhagyashri", "12/8/2023", "Developer");
-     c.sale.saledep.Employee_Data("PixelWise Technology", 102, "shri", "11/8/2021", "sale executive");
-     c.m.madep.Employee_Data("PixelWise Technology", 102, "shri", "11/8/2021", "marketing");
-     cout<<"-------------"<<endl;
-     c1.it.itdep.Employee_Data("PixelWise Technology", 101, "Bhagyashri", "12/8/2023", "Developer");
-     c1.sale.saledep.Employee_Data("PixelWise Technology", 102, "shri", "11/8/2021", "sale executive");
-     c1.m.madep.Employee_Data("PixelWise Technology", 102, "shri", "11/8/2021", "marketing");
+    int choice;
+    c.showDepartments();
+    cin >> choice;
+    c.showEmployeesByChoice(choice);
+
+
+     
 
    
-    c.ShowAllDepartment();
+
 
     return 0;
 }
