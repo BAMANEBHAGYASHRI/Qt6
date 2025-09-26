@@ -80,6 +80,11 @@ public:
            sale.ShowSaleDepartment();
             m.ShowMarketingDepartment(); 
      }
+     
+     void ExitCompany(){
+         cout<<"Thank You!!"<<endl;
+         
+     }
 
     void showDepartments() {
         cout << "\nDepartments in Company:\n";
@@ -87,6 +92,7 @@ public:
         cout << "2. Sales Department\n";
         cout << "3. Marketing Department\n";
         cout << "4. All Department Employee\n";
+         cout << "5.Exit\n";
         cout << "Enter your choice: ";
     }
 
@@ -103,6 +109,9 @@ public:
                 break;
             case 4: 
                 ShowAllDepartmentEmployee(); 
+                break;
+            case 5: 
+                ExitCompany(); 
                 break;
             
             default: 
