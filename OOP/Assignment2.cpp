@@ -136,9 +136,12 @@ int main() {
 
     
     int choice;
-    c.showDepartments();
-    cin >> choice;
-    c.showEmployeesByChoice(choice);
+    for(int i=0; i<=choice; i++){
+         c.showDepartments();
+        cin >> choice;
+        c.showEmployeesByChoice(choice);
+    }
+   
     
     return 0;
 }
