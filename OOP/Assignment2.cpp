@@ -1,4 +1,6 @@
 #include<iostream>
+#include<vector>
+
 using namespace std;
 
 class Employee {
@@ -27,39 +29,70 @@ public:
 
 class ItDepartment : virtual public Employee {
 public:
-    Employee emp1;
-    Employee emp2;
-    void ShowItDepartment() {
-        cout << "\nWelcome in Information Technology Department" << endl;
-        emp1.Display_Employee();
-        emp2.Display_Employee();
-    }
+        vector<Employee>emps;
+        void AddEmployee(Employee e){
+            emps.push_back(e);
+        }
+        
+        void ShowItDepartment() {
+                cout << "\nWelcome in Information Technology Department" << endl;
+                if (emps.empty()) {
+                    cout << "No employees in IT Department.\n";
+                    return;
+                }
+                for (Employee &emp : emps) {
+                    emp.Display_Employee(); 
+                }
+                // for (int i = 0; i < emps.size(); i++) {
+                //      emps[i].Display_Employee();
+                //  }
+            }
+    
 };
 
 class SaleDepartment : virtual public Employee {
 public:
-    Employee emp1;
-    Employee emp2;
+    vector<Employee> emps;
+
+    void AddEmployee(Employee e){
+        emps.push_back(e);
+    }
+
     void ShowSaleDepartment() {
         cout << "\nWelcome in Sales Department" << endl;
-        emp1.Display_Employee();
-        emp2.Display_Employee();
+        if (emps.empty()) {
+            cout << "No employees in Sales Department.\n";
+            return;
+        }
+        for (Employee &emp : emps) {
+            emp.Display_Employee();
+        }
     }
 };
 
 class MarketingDepartment : virtual public Employee {
 public:
-    Employee emp1;
-    Employee emp2;
+    vector<Employee> emps;
+
+    void AddEmployee(Employee e){
+        emps.push_back(e);
+    }
+
     void ShowMarketingDepartment() {
-      
         cout << "\nWelcome in Marketing Department" << endl;
-        emp1.Display_Employee();
-        emp2.Display_Employee();
+        if (emps.empty()) {
+            cout << "No employees in Marketing Department.\n";
+            return;
+        }
+        for (Employee &emp : emps) {
+            emp.Display_Employee();
+        }
     }
 };
+
 class Company {     
 public:
+
     ItDepartment it;
     SaleDepartment sale;
     MarketingDepartment m;
@@ -88,23 +121,28 @@ public:
 
     void showDepartments() {
         cout << "\nDepartments in Company:\n";
-        cout << "1. IT Department\n";
-        cout << "2. Sales Department\n";
-        cout << "3. Marketing Department\n";
+        cout << "1. Add Employee to IT\n";
+        cout << "2. Add Employee to Sale\n";
+        cout << "3. Add Employee to Marketing\n";
         cout << "4. All Department Employee\n";
          cout << "5.Exit\n";
         cout << "Enter your choice: ";
     }
 
+
     void showEmployeesByChoice(int choice) {
         switch (choice) {
             case 1: 
+                
+                addEmployeeDynamically(1);
                 ShowItEmployee();
                 break;
             case 2: 
+            addEmployeeDynamically(2);
                 ShowSaleEmployee(); 
                 break;
             case 3: 
+            addEmployeeDynamically(3);
                 ShowMarketingEmployee(); 
                 break;
             case 4: 
@@ -119,29 +157,56 @@ public:
                 break;
         }
     }
+    
+    void addEmployeeDynamically(int dept){
+        Employee e;
+        int id;
+        string cname;
+        string name;
+        string jd;
+        string des;
+        
+        cin.ignore();
+        cout << "Enter Company Name: ";
+        getline(cin, cname);
+        cout << "Enter Employee ID: ";
+        cin >> id;  
+        cin.ignore(); 
+        cout << "Enter Employee Name: ";
+        getline(cin, name);
+        cout << "Enter Joining Date: ";
+        getline(cin, jd);
+        cout << "Enter Designation: ";
+        getline(cin, des);
+
+        e.Employee_Data(cname, id, name, jd, des);
+        
+        
+        if(dept==1){
+             it.AddEmployee(e);
+        }
+        else if(dept==2){
+               sale.AddEmployee(e);
+        }
+        else if(dept==3){
+             m.AddEmployee(e);
+        }
+       
+     
+       
+        
+    }
 };
 
 int main() {
 
     Company c;
-
-    c.it.emp1.Employee_Data("PixelWise Technology", 101, "Bhagyashri", "12/8/2023", "Developer");
-    c.it.emp2.Employee_Data("PixelWise Technology", 102, "Vishal", "12/8/2023", "Designer");
-    
-    c.sale.emp1.Employee_Data("PixelWise Technology", 201, "poonam", "12/8/2023", "sale exective");
-    c.sale.emp2.Employee_Data("PixelWise Technology", 202, "prajkta", "12/8/2023", "sale");
-
-    c.m.emp1.Employee_Data("PixelWise Technology", 301, "prasad", "12/8/2023", "marketing");
-    c.m.emp2.Employee_Data("PixelWise Technology", 302, "Vrun", "12/8/2023", "marketing");
-
-    
     int choice;
     for(int i=0; i<=choice; i++){
          c.showDepartments();
         cin >> choice;
         c.showEmployeesByChoice(choice);
     }
-   
-    
+  
     return 0;
 }
