@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include<QTimer>
+#include<QStandardItemModel>
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -17,16 +17,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 public slots:
-    void myFunction();
-
     void addEmployee();
+
 private slots:
-    void on_tableWidget_cellActivated(int row, int column);
+    void on_comboBoxDept_activated(int index);
 
 private:
     Ui::MainWindow *ui;
-    QTimer *timer;
-
-    void clearAll();
+    QStandardItemModel *model;
 };
 #endif // MAINWINDOW_H

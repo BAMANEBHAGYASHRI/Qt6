@@ -41,8 +41,6 @@ void MainWindow::myFunction()
 
 void MainWindow::addEmployee()
 {
-
-
     QString id=ui->lineEdit_empid->text();
     QString cname=ui->lineEdit_2Cname->text();
     QString ename=ui->lineEdit_3EName->text();
@@ -68,20 +66,26 @@ void MainWindow::addEmployee()
 
 
 
+    clearAll();
 
 
+
+
+
+
+
+}
+
+void MainWindow::on_tableWidget_cellActivated(int row, int column)
+{
+
+}
+
+void MainWindow::clearAll()
+{
     ui->lineEdit_empid->clear();
     ui->lineEdit_2Cname->clear();
     ui->lineEdit_3EName->clear();
     ui->lineEdit_4joingdate->clear();
     ui->lineEdit_5Designation->clear();
-
-
-
-
-
-
-
-
-
 }
