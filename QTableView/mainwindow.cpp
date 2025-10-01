@@ -8,7 +8,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-
     model=new QStandardItemModel(0,6,this);
     model->setHorizontalHeaderLabels({"Employee id" ,"Company" ,"Name" ,"Department", "Joining Date", "Designation"});
 

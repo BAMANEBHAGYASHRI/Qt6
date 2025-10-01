@@ -152,16 +152,6 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_4joingdate">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>230</y>
-      <width>113</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="lineEdit_5Designation">
     <property name="geometry">
      <rect>
@@ -198,6 +188,34 @@
     </property>
     <property name="text">
      <string>Add</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="dateEdit">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>230</y>
+      <width>110</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelcurrentemp">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>310</y>
+      <width>201</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

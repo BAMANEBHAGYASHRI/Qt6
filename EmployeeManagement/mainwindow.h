@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include<QDate>
 #include <QMainWindow>
 #include<QTimer>
 QT_BEGIN_NAMESPACE
@@ -20,12 +20,15 @@ public slots:
     void myFunction();
 
     void addEmployee();
-private slots:
-    void on_tableWidget_cellActivated(int row, int column);
+
+    void showCurrentEmployee( const QString &id, const QString &ename);
+
+
 
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
+    QDate *date;
 
     void clearAll();
 };
