@@ -77,6 +77,13 @@ void MainWindow::showCurrentEmployee(const QString &id, const QString &ename)
     ui->labelcurrentemp->setText(text);
 }
 
+void MainWindow::updateTimerLabel(const QString &timeText)
+{
+  ui->TimerLabel->setText(timeText);
+}
+
+
+
 
 
 void MainWindow::clearAll()

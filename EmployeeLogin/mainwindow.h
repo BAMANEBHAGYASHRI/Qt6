@@ -23,10 +23,13 @@ public slots:
 
     void showCurrentEmployee( const QString &id, const QString &ename);
 
+     void updateTimerLabel(const QString &timeText);
+
 
 
 private:
     Ui::MainWindow *ui;
+
     // QTimer *timer;
     // QDate *date;
 
