@@ -17,7 +17,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 public slots:
-    void myFunction();
+
 
     void addEmployee();
 
@@ -29,9 +29,6 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-
-    // QTimer *timer;
-    // QDate *date;
 
     void clearAll();
 };

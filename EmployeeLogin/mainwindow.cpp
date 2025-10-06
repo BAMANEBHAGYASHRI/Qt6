@@ -9,16 +9,14 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    // timer = new QTimer(this);
-    // connect(timer, SIGNAL(timeout()), this , SLOT(myFunction()));
-    // timer->start(1000);
+
 
     connect(ui->BtnEmployee, &QPushButton::clicked, this , &MainWindow::addEmployee);
 
 
     ui->tableWidget->setColumnCount(5);
     QStringList hLabels;
-    hLabels<<"Id"<<"Company Name" <<"Employee name" <<"Joining date" <<"Designation";
+    hLabels<<" Employee Id"<<"Company Name" <<"Employee name" <<"Joining date" <<"Designation";
     ui->tableWidget->setHorizontalHeaderLabels(hLabels);
     ui->tableWidget->setAlternatingRowColors(true);
     ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
@@ -28,13 +26,6 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::myFunction()
-{
-//     QTime time=QTime::currentTime();
-//     QString TimeText=time.toString("hh::mm::ss");
-//     ui->TimeLabel->setText(TimeText);
 }
 
 void MainWindow::addEmployee()
@@ -81,10 +72,6 @@ void MainWindow::updateTimerLabel(const QString &timeText)
 {
   ui->TimerLabel->setText(timeText);
 }
-
-
-
-
 
 void MainWindow::clearAll()
 {

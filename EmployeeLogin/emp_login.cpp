@@ -16,10 +16,6 @@ Emp_Login::Emp_Login(QWidget *parent)
    timer=new QTimer(this);
     connect(timer, &QTimer::timeout , this ,  &Emp_Login::Updater);
    timer->start(1000);
-
-   //  connect(this, &Emp_Login::timerupdated , this, [=](int value){
-   //     ui->timer_label->setText(QString::number(value));
-   // });
 }
 Emp_Login::~Emp_Login()
 {
@@ -45,17 +41,11 @@ void Emp_Login::Mybtn()
         QMessageBox::warning(this,"Input Error","Fields are Empty");
         return;
     }
-    if(pass.isEmpty()){
-        QMessageBox::warning(this,"register","enter your Confirm Password");
-        return;
-    }
-
 
     if (!usernameRegex.match(uname).hasMatch()) {
         QMessageBox::warning(this, "Error", "Invalid username! (only letters, numbers, underscore, min 3 chars)");
         return;
     }
-
 
     if (!passwordRegex.match(pass).hasMatch()) {
         QMessageBox::warning(this, "Error", "Password must be at least 8 chars with uppercase, lowercase, digit, special char.");
@@ -70,14 +60,12 @@ void Emp_Login::Mybtn()
 
     // this->hide();
 
-    // QMessageBox::information(this, "Success", "Registration successful!");
 
 }
 
 void Emp_Login::Updater()
 {
-    // seconds++;
-    // ui->timer_label->setText(QString::number(seconds));
+
     QTime time = QTime::currentTime();
     QString TimeText = time.toString("hh::mm::ss");
     ui->timer_label->setText(TimeText);
