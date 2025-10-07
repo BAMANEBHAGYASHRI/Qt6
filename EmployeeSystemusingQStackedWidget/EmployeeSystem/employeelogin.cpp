@@ -1,28 +1,36 @@
-#include "emp_login.h"
-#include "ui_emp_login.h"
-#include "Employeedata.h"
+#include "employeelogin.h"
+#include "ui_employeelogin.h"
 #include<QMessageBox>
 #include<QTimer>
 #include<QRegularExpression>
 #include<QRegularExpressionMatch>
-Emp_Login::Emp_Login(QWidget *parent)
+#include "employeedashboard.h"
+
+EmployeeLogin::EmployeeLogin(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::Emp_Login)
+    , ui(new Ui::EmployeeLogin)
 {
     ui->setupUi(this);
-   connect(ui->btn , &QPushButton::clicked, this , &Emp_Login::Mybtn);
+    connect(ui->btn , &QPushButton::clicked, this , &EmployeeLogin::Mybtn);
 
 
-   timer=new QTimer(this);
-    connect(timer, &QTimer::timeout , this ,  &Emp_Login::Updater);
-   timer->start(1000);
+    connect(ui->backtowelcome ,&QPushButton::clicked,this ,[this](){
+        emit backToWelcome();
+    });
+
+    timer=new QTimer(this);
+    connect(timer, &QTimer::timeout , this ,  &EmployeeLogin::Updater);
+    timer->start(1000);
+    qDebug("1");
 }
-Emp_Login::~Emp_Login()
+
+EmployeeLogin::~EmployeeLogin()
 {
+    qDebug("2");
     delete ui;
 }
 
-void Emp_Login::Mybtn()
+void EmployeeLogin::Mybtn()
 {
     QString uname=ui->username->text();
     QString pass=ui->lineEdit_2->text();
@@ -52,24 +60,22 @@ void Emp_Login::Mybtn()
         return;
     }
 
-    MainWindow *mainwindow=new MainWindow(this);
-    connect(this, &Emp_Login::timerupdated, mainwindow, &MainWindow::updateTimerLabel);
-    mainwindow->show();
+   // EmployeeDashboard *empdashboard=new EmployeeDashboard(this);
+   // connect(this, &EmployeeLogin::timerupdated, empdashboard, &EmployeeDashboard::updateTimerLabel);
+   // empdashboard->show();
 
-
-
-    // this->hide();
-
-
+   emit loginSuccessful();
 }
 
-void Emp_Login::Updater()
+void EmployeeLogin::Updater()
 {
-
     QTime time = QTime::currentTime();
     QString TimeText = time.toString("hh::mm::ss");
     ui->timer_label->setText(TimeText);
 
     emit timerupdated(TimeText);
-
 }
+
+// void EmployeeLogin::backtowelcome(){
+
+// }

@@ -1,5 +1,5 @@
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "Employeedata.h"
+#include "ui_Employeedata.h"
 #include<QDebug>
 #include<QString>
 #include<QTime>

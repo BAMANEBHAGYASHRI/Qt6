@@ -8,12 +8,12 @@ qt_standard_project_setup()
 qt_add_executable(EmployeeLogin
     WIN32 MACOSX_BUNDLE
     main.cpp
-    emp_login.cpp
-    emp_login.h
-    emp_login.ui
-    Employeedata.cpp
-    Employeedata.h
-    Employeedata.ui
+    employeelogin.cpp
+    employeelogin.h
+    employeelogin.ui
+    employeedashboard.cpp
+    employeedashboard.h
+    employeedashboard.ui
 )
 
 target_link_libraries(EmployeeLogin
