@@ -27,7 +27,7 @@ signals:
 private:
     Ui::Emp_Login *ui;
     QTimer *timer;
-    // int seconds=0;
+    int seconds=0;
 
 };
 #endif // EMP_LOGIN_H
